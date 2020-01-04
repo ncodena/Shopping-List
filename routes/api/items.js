@@ -15,5 +15,31 @@ router.get('/', (req, res) => {
         .then(items => res.json(items))
 });
 
+// @route POST api/items
+// @desc Create an Item 
+// @access Public
+
+router.post('/', (req, res) => {
+    const newItem = new Item({
+        name: req.body.name
+    });
+
+    newItem.save().then(item => res.json(item));
+    
+});
+
+// @route DELETE api/items
+// @desc Delete an Iten
+// @access Public
+
+router.post('/', (req, res) => {
+    const newItem = new Item({
+        name: req.body.name
+    });
+
+    newItem.save().then(item => res.json(item));
+    
+});
+
 
 module.exports = router;
