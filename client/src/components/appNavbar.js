@@ -27,6 +27,7 @@ return (
     <Navbar color="dark" dark expand="sm" className="mb-5">
         <Container>
             <NavbarBrand href="/">Shopping List</NavbarBrand>
+            <h2>Add item</h2>
             <NavbarToggler onClick={this.toggle}></NavbarToggler>
             <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
