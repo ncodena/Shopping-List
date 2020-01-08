@@ -16,7 +16,7 @@ import uuid from 'uuid';
 class ItemModal extends Component {
     state = {
         modal: false,
-        name: '',
+        name: ''
     };
 
     toggle = () => {
