@@ -6,9 +6,11 @@ NavbarToggler,
 NavbarBrand,
 Nav,
 NavItem,
-NavLink,
 Container,
 }from 'reactstrap' ;
+
+import RegisterModal from './auth/registerModal';
+import Logout from './auth/Logout';
 
 class AppNavbar extends Component {
 state = {
@@ -31,9 +33,10 @@ return (
             <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                     <NavItem>
-                        <NavLink href="https://github.com/ncodena">
-                            GitHub
-                        </NavLink>
+                        <RegisterModal/>
+                    </NavItem>
+                    <NavItem>
+                        <Logout/>
                     </NavItem>
                 </Nav>
             </Collapse>

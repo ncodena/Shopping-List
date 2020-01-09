@@ -34,7 +34,44 @@ export const loadUser = () => (dispatch, getState) => {
 
 };
 
-//SetUP CONFIG/HEADERS AND TOKEN
+//Register User
+
+export const Register = ({name, email, password}) => dispatch => {
+    //Headers
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+
+    // Request body
+
+    const body = JSON.stringify({name, email, password});
+
+    console.log(body)
+
+    axios.post('/api/users', body, config)
+        .then(res => dispatch ({
+            type: REGISTER_SUCCESS,
+            payload: res.data
+        }))
+        .catch(err => {
+            dispatch(returnErrors(err.response.data, err.response.status, 'REGISTER_FAIL'));
+            dispatch({
+                type: REGISTER_FAIL
+            })
+        })
+};
+
+//Logout User
+
+export const logout = () => {
+    return{
+        type: LOGOUT_SUCCESS
+    };
+}
+
+//SETUP CONFIG/HEADERS AND TOKEN
 
 export const tokenConfig = getState => {
 
