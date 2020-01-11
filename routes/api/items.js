@@ -21,6 +21,7 @@ router.get('/', (req, res) => {
 // @access Public
 
 router.post('/', auth, (req, res) => {
+    console.log(req)
     const newItem = new Item({
         name: req.body.name
     });

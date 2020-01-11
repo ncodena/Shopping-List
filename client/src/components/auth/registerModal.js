@@ -9,7 +9,7 @@ import {
     Label,
     Input,
     NavLink,
-    Alert,
+    Alert
 } from 'reactstrap';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
@@ -88,7 +88,7 @@ class RegisterModal extends Component {
         console.log(this.props.Register(newUser))
 
         //Close modal
-        this.toggle();
+        // this.toggle();
     }
 
     render () {
@@ -98,9 +98,7 @@ class RegisterModal extends Component {
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>Registration Form</ModalHeader>
                     <ModalBody>
-                        {this.state.msg ? (
-                            <Alert color="danger">{this.state.msg}</Alert>
-                            ) : null}
+                        {this.state.msg ? <Alert color="danger">{this.state.msg}</Alert>: null}
                         <Form onSubmit={this.onSubmit}>
                             <FormGroup>
                                 <Label for="name">Name</Label>
@@ -109,7 +107,7 @@ class RegisterModal extends Component {
                                 <Label for="email">Email</Label>
                                 <Input type="email" name= "email" id="email" placeholder="Email" className="mb-3" onChange={this.onChange}></Input>
 
-                                <Label for="name">Password</Label>
+                                <Label for="password">Password</Label>
                                 <Input type="password" name= "password" id="password" placeholder="Password" className="mb-3" onChange={this.onChange}></Input>
 
                                 <Button color="dark" style={{marginTop: '2rem'}} block>Register</Button>
@@ -129,6 +127,6 @@ class RegisterModal extends Component {
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated,
     error: state.error,
-})
+});
 
 export default connect (mapStateToProps, {Register, clearErrors}) (RegisterModal);

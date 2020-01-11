@@ -6,7 +6,7 @@ export const returnErrors = (msg, status, id= null) => {
     return {
         type: GET_ERRORS,
         payload: {msg, status, id}
-    };
+    }
 };
 
 //clear errors

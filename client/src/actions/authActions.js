@@ -1,6 +1,4 @@
-import axios from 'axios';
 
-import {returnErrors} from './errorActions';
 
 import {
     USER_LOADING,
@@ -13,6 +11,10 @@ import {
     REGISTER_FAIL
 } from './types';
 
+import axios from 'axios';
+
+import {returnErrors} from './errorActions';
+
 //Check token & load user
 
 export const loadUser = () => (dispatch, getState) => {
@@ -20,7 +22,7 @@ export const loadUser = () => (dispatch, getState) => {
     dispatch ({type: USER_LOADING});
 
 
-    axios.get('/api/auth/user', tokenConfig(getState) )
+    axios.get('/api/auth/user', tokenConfig(getState))
     .then(res => dispatch({
         type: USER_LOADED,
         payload: res.data
@@ -123,7 +125,7 @@ export const tokenConfig = getState => {
     //If token, add to headers
 
     if(token){
-        config.headers['x.auth-token'] = token;
+        config.headers['x-auth-token'] = token;
     }
 
     return config;
