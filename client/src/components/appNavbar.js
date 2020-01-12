@@ -14,7 +14,7 @@ import LoginModal from './auth/loginModal';
 import Logout from './auth/Logout';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-
+import cart from './img/cart.png'
 class AppNavbar extends Component {
     state = {
         isOpen: false
@@ -62,7 +62,11 @@ return (
 <div>
     <Navbar color="dark" dark expand="sm" className="mb-5">
         <Container>
+            
+            <img width='20%' src={cart} alt='cart-logo'/>
             <NavbarBrand href="/">Shopping List</NavbarBrand>
+            
+            
             <NavbarToggler onClick={this.toggle}></NavbarToggler>
             <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
