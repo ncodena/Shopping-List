@@ -21,6 +21,6 @@ MAIN GOALS
 
 TECHNOLOGIES:
 
-MERN STACK : MongoDB | Express.js | React/Redux | Node.js
+MongoDB | Express.js | React/Redux | Node.js | REACTSTRAP | REACT TRANSITION GROUP 
 
 Visit the project - https://nco-mern-shopping-list.herokuapp.com/
